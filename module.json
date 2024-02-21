@@ -1,12 +1,13 @@
 {
   "id": "groupmembers",
   "name": "Group Members Widget",
-  "description": "Adds a widget with the most recent members of the network to the Dashboard, allowing your userbase to warmly welcome the new ones.",
+  "description": "Adds a widget with the user of a group to the Dashboard and spaces, allowing your userbase to contact them when needed.",
   "keywords": [
     "group",
     "members",
     "widget",
-    "dashboard"
+    "dashboard",
+    "spaces"
   ],
   "authors": [
     {

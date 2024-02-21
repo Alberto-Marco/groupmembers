@@ -13,7 +13,7 @@ use humhub\modules\user\models\Group;
  *
  * @package humhub.modules_core.directory.widgets
  * @since 0.11
- * @author Andreas Strobel
+ * @author OpenBox srl
  */
 class GroupMembersSidebarWidget extends Widget
 {
@@ -29,7 +29,7 @@ class GroupMembersSidebarWidget extends Widget
             return '';
         }
 
-        $group = Group::findOne(['name' => 'AmbitoA']);
+        $group = Group::findOne(['name' => $config->groupName]);
         $groupUsers = [];
         if($group == null)
         {

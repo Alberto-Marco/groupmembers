@@ -15,7 +15,7 @@ use yii\bootstrap\ActiveForm;
 
         <?= $form->field($model, 'panelTitle') ?>
         <?= $form->field($model, 'maxMembers') ?>
-        <?= $form->field($model, 'fromDate') ?>
+        <?= $form->field($model, 'groupName') ?>
 
         <?= Html::label(Yii::t('GroupmembersModule.base', 'Show on dashboard'), null, ['class' => 'control-label']) ?>
         <?= $form->field($model, 'displayForMembers')->checkbox() ?>

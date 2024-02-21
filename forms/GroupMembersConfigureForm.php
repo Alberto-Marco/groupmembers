@@ -24,9 +24,9 @@ class GroupMembersConfigureForm extends Model
     public $maxMembers;
 
     /**
-     * @var string $fromDate
+     * @var string $groupName
      */
-    public $fromDate;
+    public $groupName;
 
     /**
      * @var bool $displayForMembers
@@ -46,7 +46,7 @@ class GroupMembersConfigureForm extends Model
 
         $this->panelTitle = $this->module->settings->get('panelTitle') ?: Yii::t('GroupmembersModule.base', 'Group Members');
         $this->maxMembers = (int)$this->module->settings->get('maxMembers', 10);
-        $this->fromDate = $this->module->settings->get('fromDate');
+        $this->groupName = $this->module->settings->get('groupName') ?: Yii::t('GroupmembersModule.base', 'Administrators');
         $this->displayForMembers = (bool)$this->module->settings->get('displayForMembers', true);
         $this->displayForGuests = (bool)$this->module->settings->get('displayForGuests', true);
     }
@@ -60,7 +60,7 @@ class GroupMembersConfigureForm extends Model
             [['maxMembers'], 'required'],
             [['panelTitle'], 'string'],
             ['maxMembers', 'integer', 'min' => '0'],
-            ['fromDate', 'date', 'format' => 'yyyy-MM-dd hh:mm:ss'],
+            [['groupName'], 'string'],
             [['displayForMembers', 'displayForGuests'], 'boolean'],
         ];
     }
@@ -73,7 +73,7 @@ class GroupMembersConfigureForm extends Model
         return [
             'panelTitle' => Yii::t('GroupmembersModule.base', 'The panel title for the dashboard widget.'),
             'maxMembers' => Yii::t('GroupmembersModule.base', 'The number of most active users that will be shown.'),
-            'fromDate' => Yii::t('GroupmembersModule.base', 'From which registration date should new users displayed as new?'),
+            'groupName' => Yii::t('GroupmembersModule.base', 'The name of the group with user to show'),
             'displayForMembers' => Yii::t('GroupmembersModule.base', 'For logged in members'),
             'displayForGuests' => Yii::t('GroupmembersModule.base', 'For guests'),
         ];
@@ -85,7 +85,7 @@ class GroupMembersConfigureForm extends Model
     public function attributeHints()
     {
         return [
-            'fromDate' => Yii::t('GroupmembersModule.base', 'This value is maybe necessary after an import from existing users. Let it empty if your user base grows naturally.'),
+            'groupName' => Yii::t('GroupmembersModule.base', 'Without this value you cant use the plugin.'),
         ];
     }
 
@@ -97,7 +97,7 @@ class GroupMembersConfigureForm extends Model
 
         $this->module->settings->set('panelTitle', $this->panelTitle);
         $this->module->settings->set('maxMembers', $this->maxMembers);
-        $this->module->settings->set('fromDate', $this->fromDate);
+        $this->module->settings->set('groupName', $this->groupName);
         $this->module->settings->set('displayForMembers', $this->displayForMembers);
         $this->module->settings->set('displayForGuests', $this->displayForGuests);
 

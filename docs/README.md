@@ -1,3 +1,3 @@
-# New Members Widget
+# Group Members Widget
 
-Adds a widget with the most recent members of the network to the Dashboard, allowing your userbase to warmly welcome the new ones.  
+Adds a widget with the user of a group to the Dashboard and spaces, allowing your userbase to contact them when needed.  

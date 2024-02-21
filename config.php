@@ -1,6 +1,7 @@
 <?php
 
 use humhub\modules\dashboard\widgets\Sidebar;
+use humhub\modules\space\widgets\Sidebar as Spacebar;
 
 return [
     'id' => 'groupmembers',

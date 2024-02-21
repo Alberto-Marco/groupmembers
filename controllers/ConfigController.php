@@ -10,7 +10,7 @@ use humhub\modules\groupmembers\forms\GroupMembersConfigureForm;
  * Defines the configure actions.
  *
  * @package humhub.modules.groupmembers.controllers
- * @author Marjana Pesic
+ * @author OpenBox srl
  */
 class ConfigController extends Controller
 {
