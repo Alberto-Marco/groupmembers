@@ -8,10 +8,10 @@ use yii\helpers\Html;
 /* @var User[] $groupUsers */
 ?>
 
-<div class="panel panel-default panel-new-people" id="panel-group-people">
+<div class="panel panel-default" id="panel-group-people">
     <?= PanelMenu::widget(['id' => 'panel-group-people']); ?>
     <div class="panel-heading">
-        <?= $title; ?>
+        <b><?= $title; ?></b>
     </div>
     <div class="panel-body">
         <?php foreach ($groupUsers as $user) : ?>
