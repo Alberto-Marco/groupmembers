@@ -23,6 +23,11 @@ class GroupMembersConfigureForm extends Model
      */
     public $maxMembers;
 
+        /**
+     * @var int $position
+     */
+    public $position;
+
     /**
      * @var string $groupName
      */
@@ -46,6 +51,7 @@ class GroupMembersConfigureForm extends Model
 
         $this->panelTitle = $this->module->settings->get('panelTitle') ?: Yii::t('GroupmembersModule.base', 'Group Members');
         $this->maxMembers = (int)$this->module->settings->get('maxMembers', 10);
+        $this->position = (int)$this->module->settings->get('position', 00);
         $this->groupName = $this->module->settings->get('groupName') ?: Yii::t('GroupmembersModule.base', 'Administrators');
         $this->displayForMembers = (bool)$this->module->settings->get('displayForMembers', true);
         $this->displayForGuests = (bool)$this->module->settings->get('displayForGuests', true);
@@ -60,6 +66,7 @@ class GroupMembersConfigureForm extends Model
             [['maxMembers'], 'required'],
             [['panelTitle'], 'string'],
             ['maxMembers', 'integer', 'min' => '0'],
+            ['position', 'integer', 'min' => '0'],
             [['groupName'], 'string'],
             [['displayForMembers', 'displayForGuests'], 'boolean'],
         ];
@@ -73,6 +80,7 @@ class GroupMembersConfigureForm extends Model
         return [
             'panelTitle' => Yii::t('GroupmembersModule.base', 'The panel title for the dashboard widget.'),
             'maxMembers' => Yii::t('GroupmembersModule.base', 'The number of most active users that will be shown.'),
+            'position' => Yii::t('GroupmembersModule.base', 'The number of position humhub.'),
             'groupName' => Yii::t('GroupmembersModule.base', 'The name of the group with user to show'),
             'displayForMembers' => Yii::t('GroupmembersModule.base', 'For logged in members'),
             'displayForGuests' => Yii::t('GroupmembersModule.base', 'For guests'),
@@ -97,6 +105,7 @@ class GroupMembersConfigureForm extends Model
 
         $this->module->settings->set('panelTitle', $this->panelTitle);
         $this->module->settings->set('maxMembers', $this->maxMembers);
+        $this->module->settings->set('position', $this->position);
         $this->module->settings->set('groupName', $this->groupName);
         $this->module->settings->set('displayForMembers', $this->displayForMembers);
         $this->module->settings->set('displayForGuests', $this->displayForGuests);

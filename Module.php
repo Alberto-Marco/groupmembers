@@ -3,6 +3,7 @@
 namespace humhub\modules\groupmembers;
 
 use humhub\modules\groupmembers\widgets\GroupMembersSidebarWidget;
+use humhub\modules\groupmembers\forms\GroupMembersConfigureForm;
 use yii\helpers\Url;
 
 class Module extends \humhub\components\Module
@@ -15,7 +16,8 @@ class Module extends \humhub\components\Module
 
     public static function onSidebarInit($event)
     {
-        $event->sender->addWidget(GroupMembersSidebarWidget::class, [], ['sortOrder' => 000]);
+        $config = new GroupMembersConfigureForm();
+        $event->sender->addWidget(GroupMembersSidebarWidget::class, [], ['sortOrder' => $config->position]);
     }
 
     /**
