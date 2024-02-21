@@ -3,11 +3,11 @@
 use humhub\modules\dashboard\widgets\Sidebar;
 
 return [
-    'id' => 'newmembers',
-    'class' => 'humhub\modules\newmembers\Module',
-    'namespace' => 'humhub\modules\newmembers',
+    'id' => 'groupmembers',
+    'class' => 'humhub\modules\groupmembers\Module',
+    'namespace' => 'humhub\modules\groupmembers',
     'events' => [
-        ['class' => Sidebar::class, 'event' => Sidebar::EVENT_INIT, 'callback' => ['humhub\modules\newmembers\Module', 'onSidebarInit']],
+        ['class' => Sidebar::class, 'event' => Sidebar::EVENT_INIT, 'callback' => ['humhub\modules\groupmembers\Module', 'onSidebarInit']],
     ],
 ];
 ?>

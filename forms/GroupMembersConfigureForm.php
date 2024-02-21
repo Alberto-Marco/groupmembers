@@ -1,12 +1,12 @@
 <?php
 
-namespace humhub\modules\newmembers\forms;
+namespace humhub\modules\groupmembers\forms;
 
-use humhub\modules\newmembers\Module;
+use humhub\modules\groupmembers\Module;
 use Yii;
 use yii\base\Model;
 
-class NewMembersConfigureForm extends Model
+class GroupMembersConfigureForm extends Model
 {
     /**
      * @var Module $module
@@ -42,9 +42,9 @@ class NewMembersConfigureForm extends Model
     {
         parent::init();
 
-        $this->module = Yii::$app->getModule('newmembers');
+        $this->module = Yii::$app->getModule('groupmembers');
 
-        $this->panelTitle = $this->module->settings->get('panelTitle') ?: Yii::t('NewmembersModule.base', 'New Members');
+        $this->panelTitle = $this->module->settings->get('panelTitle') ?: Yii::t('GroupmembersModule.base', 'Group Members');
         $this->maxMembers = (int)$this->module->settings->get('maxMembers', 10);
         $this->fromDate = $this->module->settings->get('fromDate');
         $this->displayForMembers = (bool)$this->module->settings->get('displayForMembers', true);
@@ -71,11 +71,11 @@ class NewMembersConfigureForm extends Model
     public function attributeLabels()
     {
         return [
-            'panelTitle' => Yii::t('NewmembersModule.base', 'The panel title for the dashboard widget.'),
-            'maxMembers' => Yii::t('NewmembersModule.base', 'The number of most active users that will be shown.'),
-            'fromDate' => Yii::t('NewmembersModule.base', 'From which registration date should new users displayed as new?'),
-            'displayForMembers' => Yii::t('NewmembersModule.base', 'For logged in members'),
-            'displayForGuests' => Yii::t('NewmembersModule.base', 'For guests'),
+            'panelTitle' => Yii::t('GroupmembersModule.base', 'The panel title for the dashboard widget.'),
+            'maxMembers' => Yii::t('GroupmembersModule.base', 'The number of most active users that will be shown.'),
+            'fromDate' => Yii::t('GroupmembersModule.base', 'From which registration date should new users displayed as new?'),
+            'displayForMembers' => Yii::t('GroupmembersModule.base', 'For logged in members'),
+            'displayForGuests' => Yii::t('GroupmembersModule.base', 'For guests'),
         ];
     }
 
@@ -85,7 +85,7 @@ class NewMembersConfigureForm extends Model
     public function attributeHints()
     {
         return [
-            'fromDate' => Yii::t('NewmembersModule.base', 'This value is maybe necessary after an import from existing users. Let it empty if your user base grows naturally.'),
+            'fromDate' => Yii::t('GroupmembersModule.base', 'This value is maybe necessary after an import from existing users. Let it empty if your user base grows naturally.'),
         ];
     }
 

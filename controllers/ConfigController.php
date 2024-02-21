@@ -1,15 +1,15 @@
 <?php
 
-namespace humhub\modules\newmembers\controllers;
+namespace humhub\modules\groupmembers\controllers;
 
 use Yii;
 use humhub\modules\admin\components\Controller;
-use humhub\modules\newmembers\forms\NewMembersConfigureForm;
+use humhub\modules\groupmembers\forms\GroupMembersConfigureForm;
 
 /**
  * Defines the configure actions.
  *
- * @package humhub.modules.newmembers.controllers
+ * @package humhub.modules.groupmembers.controllers
  * @author Marjana Pesic
  */
 class ConfigController extends Controller
@@ -20,7 +20,7 @@ class ConfigController extends Controller
      */
     public function actionConfig()
     {
-        $form = new NewMembersConfigureForm();
+        $form = new GroupMembersConfigureForm();
 
         if ($form->load(Yii::$app->request->post()) && $form->save()) {
             $this->view->saved();

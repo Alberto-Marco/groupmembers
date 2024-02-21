@@ -1,8 +1,8 @@
 <?php
 
-namespace humhub\modules\newmembers;
+namespace humhub\modules\groupmembers;
 
-use humhub\modules\newmembers\widgets\NewMembersSidebarWidget;
+use humhub\modules\groupmembers\widgets\GroupMembersSidebarWidget;
 use yii\helpers\Url;
 
 class Module extends \humhub\components\Module
@@ -15,7 +15,7 @@ class Module extends \humhub\components\Module
 
     public static function onSidebarInit($event)
     {
-        $event->sender->addWidget(NewMembersSidebarWidget::class, [], ['sortOrder' => 300]);
+        $event->sender->addWidget(GroupMembersSidebarWidget::class, [], ['sortOrder' => 300]);
     }
 
     /**
@@ -23,7 +23,7 @@ class Module extends \humhub\components\Module
      */
     public function getConfigUrl()
     {
-        return Url::to(['/newmembers/config/config']);
+        return Url::to(['/groupmembers/config/config']);
     }
 
 }

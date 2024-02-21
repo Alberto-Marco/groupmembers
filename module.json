@@ -1,19 +1,19 @@
 {
-  "id": "newmembers",
-  "name": "New Members Widget",
+  "id": "groupmembers",
+  "name": "Group Members Widget",
   "description": "Adds a widget with the most recent members of the network to the Dashboard, allowing your userbase to warmly welcome the new ones.",
   "keywords": [
-    "new",
+    "group",
     "members",
     "widget",
     "dashboard"
   ],
   "authors": [
     {
-      "name": "Andreas Strobel"
+      "name": "OpenBox srl"
     }
   ],
-  "homepage": "https://github.com/humhub-contrib/newmembers",
+  "homepage": "https://github.com/humhub-contrib/groupmembers",
   "version": "1.0.3",
   "humhub": {
     "minVersion": "1.4"

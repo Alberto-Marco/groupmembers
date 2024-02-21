@@ -5,7 +5,7 @@ return array (
   'For guests' => 'Per gli ospiti',
   'For logged in members' => 'Per i membri collegati',
   'From which registration date should new users displayed as new?' => 'Da quale data registrazione gli utenti dovrebbero essere mostrati come nuovi?',
-  'New Members' => 'Nuovi membri',
+  'Group Members' => 'Memrbi del Gruppo',
   'Show on dashboard' => 'Mostra sulla Dashboard',
   'The number of most active users that will be shown.' => 'Il numero degli utenti più attivi che verrà mostrato',
   'The panel title for the dashboard widget.' => 'Il titolo del pannello per la Widget dashboard.',
