@@ -1,5 +1,5 @@
 Changelog
 =========
 
-v0.1
-Prima relaease del plugin
+v1.0.0
+First relaease plugin

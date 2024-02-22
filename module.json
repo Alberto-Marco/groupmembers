@@ -15,7 +15,7 @@
     }
   ],
   "homepage": "https://github.com/humhub-contrib/groupmembers",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "humhub": {
     "minVersion": "1.4"
   }
