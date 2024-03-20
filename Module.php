@@ -6,6 +6,9 @@ use humhub\modules\groupmembers\widgets\GroupMembersSidebarWidget;
 use humhub\modules\groupmembers\forms\GroupMembersConfigureForm;
 use yii\helpers\Url;
 
+use Yii;
+use humhub\modules\space\models\Space;
+
 class Module extends \humhub\components\Module
 {
 
@@ -17,7 +20,18 @@ class Module extends \humhub\components\Module
     public static function onSidebarInit($event)
     {
         $config = new GroupMembersConfigureForm();
-        $event->sender->addWidget(GroupMembersSidebarWidget::class, [], ['sortOrder' => $config->position]);
+
+        $space = $event->sender->space;
+
+        // Ora che hai confermato che si tratta di un oggetto Space, puoi accedere all'ID
+        $spaceId = $space->id;
+        
+        $targetSpaceId = $config->spaceId;
+        if($spaceId == $targetSpaceId){
+            $event->sender->addWidget(GroupMembersSidebarWidget::class, [], ['sortOrder' => $config->position]);
+
+        }
+
     }
 
     /**
